@@ -1,0 +1,153 @@
+.body {
+    display: flex;
+    /* flex-flow: column wrap; */
+    background-image: url(../img/background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: stretch;
+    /* align-content: stretch; */
+    /* overflow-y:hidden */
+    /* position:static; */
+    height: 100vh;
+    min-height: min-content;
+}
+.menu {
+    display: flex;
+    flex: 0 180px;
+    /* width: 180px; */
+    background-color: #080809;
+    height: 100%;
+}
+
+.dash {
+    display: flex;
+    flex: 1;
+    /* align-items: center;     */
+    /* flex-grow: 1; */
+
+}
+/* .menu>div {
+    display: flex;
+    height: 114px;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items:center;
+    justify-content: flex-start;
+    gap: 20px;
+} */
+
+ul {
+    display: flex;
+    flex-direction: column;
+    /* margin: 0; */
+    padding: 8px;
+    list-style: none;
+    gap: 35px;
+    align-items: center;
+}
+
+.menu__list {
+    /* flex-basis: 100%; */
+    align-items: stretch;
+}
+
+.menu__link{
+    color: white;
+    line-height: 25px;
+    font-size: 21px;
+    outline: none;
+    transition: color .5s;
+}
+
+.menu__link:focus{
+    outline: none;
+    color: #f66400;
+}
+
+.menu__link:hover {
+    color: #ecb009;
+}
+
+.menu__link:active{
+    color: black;
+}
+
+li {
+    text-align: center;
+}
+
+.menu__link-pic {
+    outline: 2px solid transparent;
+    transition: outline-color .5s;
+}   
+
+.menu__link-pic:focus-visible {
+    outline-color: #f66400;
+}
+
+.menu__link-pic:hover {
+    outline-color: #ecb009                                    ;             
+}
+
+.menu__link-pic:active {
+    outline-color: transparent;
+}
+
+
+.name {
+    color: #f66400;
+    letter-spacing: 4px;
+    font-weight: 600;
+    font-size: 64px;
+    font-variant-caps: all-small-caps;
+    position: absolute;
+    margin-top: 75vh;
+    margin-left: 9vw;
+}
+
+.comment {
+    color: #f66400;
+    font-size: 36px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    text-shadow: 2px 1px 0 black;
+    position: absolute;
+    top: 85vh; 
+    left: 51vw;
+}
+
+.blockquote {
+    position: absolute;
+    right: 4vw;
+    bottom: 37vh;
+    width: 175px;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    background-color: #08080942;
+}
+
+.blockquote>blockquote {
+    margin: 0;
+}
+
+.blockquote>p {
+    margin: 5px;
+    text-align: right;
+}
+
+/* Под-меню */
+.submenu {
+    /* align-self:flex-start; */
+    z-index: 10;
+    margin-left: 5px;
+    flex-basis: 330px;
+    background-color: #080809;
+    font-size: 21px;
+    font-size: 21px;
+    line-height: 26px;
+    overflow-y: auto;
+}
