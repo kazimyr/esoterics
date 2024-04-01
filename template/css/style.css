@@ -27,12 +27,6 @@ body {
         "nav main" 1fr
         "nav footer" 10.9vh
         / max-content 1fr;
-    /* grid-template-areas: 
-        "nav header"
-        "nav main"
-        "nav footer";
-    grid-template-rows: 11.5vh 1fr 10.9vh;
-    grid-template-columns: max-content 1fr; */
     color: white;
     overflow: hidden;
     height: 100vh;
@@ -47,14 +41,12 @@ a:visited {
 .header {
     grid-area: header;
     display: grid;
-    /* width: calc(100vw - 180px); */
     grid-template-columns: 1fr minmax(max-content, 1fr) minmax(max-content, 1fr);
     column-gap: 4vh;
     background-image: url(../img/header_hist_esot.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    /* justify-items: center; */
     align-items: center;
 }
 
@@ -128,14 +120,11 @@ a:visited {
     text-align: center;
     width: 60%;
     padding: 25px;
-    /* margin: 0; */
-    /* flex: 0 0 126px; */
     background-image: url(../img/bg-cource.svg);
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 16px;
     font-weight: 600;
-    /* row-gap: 50px; */
 }
 
 .menu__footer {
@@ -144,6 +133,60 @@ a:visited {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     padding-bottom: 1vh;
+}
+
+.menu__item {
+    /* outline: none; */
+    transition: color .5s;
+}
+
+.menu__item:focus {
+    outline: none;
+    color: #f66400;
+}
+
+.menu__item:hover {
+    color: #ecb009;
+}
+
+.menu__item:active {
+    color: black;
+}
+
+.menu__item-img {
+    outline: 2px solid transparent;
+    transition: outline-color .5s;
+}
+
+.menu__item-img:focus-visible {
+    outline-color: #f66400;
+}
+
+.menu__item-img:hover {
+    outline-color: #ecb009;
+}
+
+.menu__item-img :active {
+    outline-color: transparent;
+}
+
+.submenu {
+    z-index: 2;
+    position: absolute;
+    /* left: 185px; */
+    top: -1000px;
+    display: flex;
+    min-width: content;
+    flex-direction: column;
+    min-height: content;
+    background-color: #0c0c0c;
+    font-size: 16px;
+    padding: 6px;
+    transition: top .5s ease-out;
+}
+
+.submenu>a {
+    margin: 8px;
 }
 
 .main {
@@ -158,8 +201,6 @@ a:visited {
     grid-area: footer;
     z-index: 1;
     display: grid;
-    /* align-items: center; */
-    /* height: 10.9vh; */
     background: black;
     background-image: url(../img/footer_hist_esot.jpg);
     background-repeat: no-repeat;
@@ -173,33 +214,11 @@ a:visited {
     justify-items: center;
     align-items: center;
     background-color: black;
-    /* height: 0; */
-    /* width: 0; */
 }
 
 .copyright {
     justify-self: left;
     padding-left: 2%;
-}
-
-/* .footer_inner:hover {
-    animation: scaling .4s;
-
-}
- */
-.submenu {
-    z-index: 2;
-    position: absolute;
-    left: 185px;
-    top: -1000px;
-    display: flex;
-    min-width: content;
-    flex-direction: column;
-    min-height: content;
-    background-color: #0c0c0c;
-    font-size: 16px;
-    padding: 6px;
-    transition: top .5s ease-out;
 }
 
 .up {
