@@ -359,10 +359,7 @@ footer {
         transition: left .3s ease-out;
     }
 
-    /* .menu:active {
-        left: -206px;
-    } */
-
+    
     .submenu{
         display: none;
     }
