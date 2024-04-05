@@ -77,7 +77,7 @@ document.querySelector('.up').onclick = function () {
 }
 
 window.addEventListener('resize', () => {
-    let courseIn, logoIn;
+    let courseIn;
     let display = window.getComputedStyle(document.querySelector('.blockquote')).display
     if (display === 'none') {
         courseIn = '.aside';
