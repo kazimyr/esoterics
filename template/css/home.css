@@ -158,7 +158,7 @@ header>h1 {
 .dash {
     display: flex;
     flex-wrap: wrap;
-    background-image: url(../img/bg-home.jpeg);
+    background-image: url(../img/bg-home.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
