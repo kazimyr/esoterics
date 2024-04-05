@@ -114,12 +114,13 @@ window.addEventListener('resize', () => {
 
 mQLMax.addEventListener('change', (ev) => {
     if (ev.matches) {
-        if (menu.style.display === 'grid') { minScreen();}
+        if (menu.style.display !== 'none') {
+            minScreen();
+        }
     } else {
         menu.style.animation = '';
         maxScreen();
         menu.style.display = '';
-        
     }
 });
 
