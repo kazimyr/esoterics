@@ -7,20 +7,42 @@ let course = document.getElementById('course');
 let up = document.querySelector('.up');
 
 let cssVariables =  new Map([
-    [['история эзотерики'] , {
+    [
+        [
+            'история эзотерики',
+        ], 
+        {
         '--bg-image-header' : 'url(../img/header_hist_esot.jpg)',
         '--bg-image-main' : 'url(../img/main_hist_esot.jpg)',
         '--bg-image-footer' : 'url(../img/footer_hist_esot.jpg)',
         '--base-color' : '#0c3666',
         '--card-bg-color' : '#1c3b4fc7'
-    }],
-    [['эзотерические учения'] , {
-        '--bg-image-header' : 'url(../img/bg-header_es_teachings.jpg)',
-        '--bg-image-main' : 'url(../img/bg-main_es_teachings.jpg)',
-        '--bg-image-footer' : 'url(../img/bg-footer_es_teachings.jpg)',
-        '--base-color' : '#5c5b44',
-        '--card-bg-color' : '#1c3b4fc7'
-    }],
+        }
+    ],
+    [
+        [
+            'эзотерические учения',
+        ], 
+        {
+            '--bg-image-header' : 'url(../img/bg-header_es_teachings.jpg)',
+            '--bg-image-main' : 'url(../img/bg-main_es_teachings.jpg)',
+            '--bg-image-footer' : 'url(../img/bg-footer_es_teachings.jpg)',
+            '--base-color' : '#5c5b44',
+            '--card-bg-color' : '#64664eb3'
+        }
+    ],
+    [
+        [
+            'тайные знания славян',
+        ],
+        {
+            '--bg-image-header' : 'url(../img/bg-header_es_teachings.jpg)',
+            '--bg-image-main' : 'url(../img/bg-main_es_teachings.jpg)',
+            '--bg-image-footer' : 'url(../img/bg-footer_es_teachings.jpg)',
+            '--base-color' : '#5c5b44',
+            '--card-bg-color' : '#1c3b4fc7'
+        }
+    ],
 ]);
 
 // document.documentElement.style.setProperty('--pagebackground', 'firebrick');
