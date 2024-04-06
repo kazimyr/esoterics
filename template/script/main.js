@@ -6,6 +6,18 @@ let menu = document.querySelector('.menu');
 let course = document.getElementById('course');
 let up = document.querySelector('.up');
 
+let cssVariables =  new Map([
+    [['история эзотерики'] , {
+        '--bg-image-header' : 'url(../img/header_hist_esot.jpg)',
+        '--bg-image-main' : 'url(../img/main_hist_esot.jpg)',
+        '--bg-image-footer' : 'url(../img/footer_hist_esot.jpg)',
+        '--base-color' : '#0c3666',
+        '--card-bg-color' : '#1c3b4fc7'
+    }]
+]);
+
+// document.documentElement.style.setProperty('--pagebackground', 'firebrick');
+
 let minScreen = () => {
     let logo = document.querySelector('nav>.logo');
     document.querySelector('.header>section').appendChild(logo);
@@ -128,4 +140,16 @@ window.addEventListener('load', () => {
     if (mQLMax.matches) {
         minScreen()
     }
+    let h1 = document.querySelector('.header__name').innerHTML.toLowerCase()
+
+    // document.documentElement.style.setProperty('--pagebackground', 'firebrick');
+    cssVariables.forEach((val, key) => {
+        if (key.includes(h1)){
+            Object.entries(val).forEach((el) => {
+                // console.log(el[0], el[1]);
+                document.documentElement.style.setProperty(el[0], el[1]);
+            });
+            // break;
+        }
+    });
 });
