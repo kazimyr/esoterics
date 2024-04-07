@@ -136,7 +136,8 @@ document.querySelectorAll('.items>.menu__item').forEach(element => {
     });
 });
 
-document.querySelectorAll('.main, .header, .footer').forEach(element => {addEventListener('click', () => {
+document.querySelectorAll('.main, .header, .footer').forEach(element => {
+    addEventListener('click', (event) => {
         if (!mQLMax.matches){
             if (lastEventTargetId) {
                 document.querySelector('.' + lastEventTargetId).style.top = '-1000px';
@@ -146,9 +147,10 @@ document.querySelectorAll('.main, .header, .footer').forEach(element => {addEven
                 lastElementMenu.style.color = 'white';
             }
         } else {
-            menu.style.animation = 'rescalingX .4s ease-out';
+            if (event.target != document.querySelector('.up')) {
+                menu.style.animation = 'rescalingX .4s ease-out';
+            }
         }
-        
     });
 });
 
