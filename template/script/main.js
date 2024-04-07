@@ -36,11 +36,23 @@ let cssVariables =  new Map([
             'тайные знания славян',
         ],
         {
-            '--bg-image-header' : 'url(../img/bg-header_es_teachings.jpg)',
-            '--bg-image-main' : 'url(../img/bg-main_es_teachings.jpg)',
-            '--bg-image-footer' : 'url(../img/bg-footer_es_teachings.jpg)',
-            '--base-color' : '#5c5b44',
-            '--card-bg-color' : '#1c3b4fc7'
+            '--bg-image-header' : 'url(../img/bg-header_slavs_secret_knowledge.jpg)',
+            '--bg-image-main' : 'url(../img/bg-main_slavs_secret_knowledge.jpg)',
+            '--bg-image-footer' : 'url(../img/bg-footer_slavs_secret_knowledge.jpg)',
+            '--base-color' : '#a48c0b7d',
+            '--card-bg-color' : '#a48c0b7d'
+        }
+    ],
+    [
+        [
+            'практическая эзотерика',
+        ],
+        {
+            '--bg-image-header' : 'url(../img/bg-header_slavs_secret_knowledge.jpg)',
+            '--bg-image-main' : 'url(../img/bg-main_slavs_secret_knowledge.jpg)',
+            '--bg-image-footer' : 'url(../img/bg-footer_slavs_secret_knowledge.jpg)',
+            '--base-color' : '#a48c0b7d',
+            '--card-bg-color' : '#64664eb3'
         }
     ],
 ]);
