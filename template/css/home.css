@@ -168,6 +168,7 @@ header>h1 {
     text-align: center;
     background-position: 65%;
     flex: 1;
+    transition: min-height 0.3s ease-out;
 }
 
 .title {
@@ -243,7 +244,7 @@ header>h1 {
 .blockquote {
     display: block;
     flex-basis: 196px;
-    height: 80vh;
+    height: 80%;
     padding: 40vh 15px 0 15px;
     background-image: url(../img/bg-home-div.png);
     background-repeat: no-repeat;
@@ -295,6 +296,8 @@ footer {
 .foooter__item_link:active {
     color: black;
 }
+
+
 
 @media screen and (max-width:1002px) {
 
