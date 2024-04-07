@@ -299,7 +299,7 @@ footer {
 
 
 
-@media screen and (max-width:1002px) {
+@media (max-width:1002px) or (max-height: 795px) {
 
     .dash {
         flex-direction: column;
