@@ -40,8 +40,8 @@ let cssVariables =  new Map([
             '--bg-image-header' : 'url(../img/bg-header_slavs_secret_knowledge.jpg)',
             '--bg-image-main' : 'url(../img/bg-main_slavs_secret_knowledge.jpg)',
             '--bg-image-footer' : 'url(../img/bg-footer_slavs_secret_knowledge.jpg)',
-            '--base-color' : '#a48c0b7d',
-            '--card-bg-color' : '#a48c0b54'
+            '--base-color' : '#041e0660',
+            '--card-bg-color' : '#041e0654'
         }
     ],
     [
