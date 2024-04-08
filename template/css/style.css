@@ -58,7 +58,8 @@
 body {
     display: grid;
     grid-template:
-        "nav header" minmax(72px, 11.5vh) "nav main" 1fr
+        "nav header" minmax(103px, 11.5vh) 
+        "nav main" 1fr
         "nav footer" minmax(50px, 10.9vh) / min-content 1fr;
     color: white;
     overflow: hidden;
