@@ -34,6 +34,7 @@ let cssVariables =  new Map([
     [
         [
             'тайные знания славян',
+            'символика славянских колдовских знаков и амулетов',
         ],
         {
             '--bg-image-header' : 'url(../img/bg-header_slavs_secret_knowledge.jpg)',
@@ -48,11 +49,23 @@ let cssVariables =  new Map([
             'практическая эзотерика',
         ],
         {
-            '--bg-image-header' : 'url(../img/bg-header_slavs_secret_knowledge.jpg)',
-            '--bg-image-main' : 'url(../img/bg-main_slavs_secret_knowledge.jpg)',
-            '--bg-image-footer' : 'url(../img/bg-footer_slavs_secret_knowledge.jpg)',
-            '--base-color' : '#a48c0b7d',
-            '--card-bg-color' : '#64664eb3'
+            '--bg-image-header' : 'url(../img/bg-header-practical_esoterics.jpg)',
+            '--bg-image-main' : 'url(../img/bg-main-practical_esoterics.jpg)',
+            '--bg-image-footer' : 'url(../img/bg-footer-practical_esoterics.jpg)',
+            '--base-color' : '#7890db7d',
+            '--card-bg-color' : '#7890db7d'
+        }
+    ],
+    [
+        [
+            'библиотека',
+        ],
+        {
+            '--bg-image-header' : 'url(../img/bg-header-library.jpg)',
+            '--bg-image-main' : 'url(../img/bg-main-library.jpg)',
+            '--bg-image-footer' : 'url(../img/bg-footer-library.jpg)',
+            '--base-color' : '#1f3f267d',
+            '--card-bg-color' : '#1f3f267d'
         }
     ],
 ]);
