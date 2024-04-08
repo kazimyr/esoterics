@@ -126,7 +126,7 @@ a:visited {
 }
 
 .find__input::placeholder {
-    color: rgb(170, 175, 179);
+    color: #aaafb3;
 }
 
 /* Меню */
@@ -244,7 +244,7 @@ a:visited {
     grid-area: main;
     display: grid;
     grid-template-columns: repeat(auto-fit, 233px);
-    grid-auto-rows: minmax(21em, 350px);
+    grid-auto-rows: minmax(24em, 350px);
     column-gap: 1.5%;
     row-gap: 2.9%;
     padding: 0 1%;
@@ -259,7 +259,7 @@ a:visited {
 .card {
     display: grid;
     grid-template-rows: min-content 1fr min-content;
-    row-gap: 4%;
+    row-gap: 2.5%;
     font-size: clamp(12px, 2.5vh, 16px);
     background-color: var(--card-bg-color);
     padding: 2%;
