@@ -248,7 +248,7 @@ a:visited {
     column-gap: 1.5%;
     row-gap: 2.9%;
     padding: 0 1%;
-    justify-content: center;
+    justify-content:space-around ;
     background-image: var(--bg-image-main);
     background-repeat: no-repeat;
     background-size: cover;
