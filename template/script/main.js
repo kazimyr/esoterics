@@ -9,10 +9,17 @@ let up = document.querySelector('.up');
 let cssVariables =  new Map([
     [
         [
-            'история эзотерики',
-            'зарождение эзотерических учений',
-            'влияние античной философии на эзотерику',
-            'эзотерические учения в средние века',
+            'История эзотерики',
+            'Зарождение эзотерических учений',
+            'Эзотерические учения в средние века',
+            'Влияние античной философии на эзотерику',
+            'Ренессанс и эзотерическое мышление',
+            'Особенности эзотерических течений в XIX веке',
+            'Вклад знаменитых мистиков и оккультистов в эзотерику',
+            'Эзотерические движения и школы XX века',
+            'Современные тенденции в изучении и практике эзотерики',
+            'Влияние интернета на распространение эзотерических знаний',
+            'Исследования и перспективы развития истории эзотерики',
         ], 
         {
         '--bg-image-header' : 'url(../img/header_hist_esot.jpg)',
@@ -24,7 +31,7 @@ let cssVariables =  new Map([
     ],
     [
         [
-            'эзотерические учения',
+            'Эзотерические учения',
         ], 
         {
             '--bg-image-header' : 'url(../img/bg-header_es_teachings.jpg)',
@@ -36,8 +43,8 @@ let cssVariables =  new Map([
     ],
     [
         [
-            'тайные знания славян',
-            'символика славянских колдовских знаков и амулетов',
+            'Тайные знания славян',
+            'Символика славянских колдовских знаков и амулетов',
         ],
         {
             '--bg-image-header' : 'url(../img/bg-header_slavs_secret_knowledge.jpg)',
@@ -49,7 +56,7 @@ let cssVariables =  new Map([
     ],
     [
         [
-            'практическая эзотерика',
+            'Практическая эзотерика',
         ],
         {
             '--bg-image-header' : 'url(../img/bg-header-practical_esoterics.jpg)',
@@ -61,7 +68,7 @@ let cssVariables =  new Map([
     ],
     [
         [
-            'библиотека',
+            'Библиотека',
         ],
         {
             '--bg-image-header' : 'url(../img/bg-header-library.jpg)',
@@ -204,7 +211,7 @@ window.addEventListener('load', () => {
 
     // document.documentElement.style.setProperty('--pagebackground', 'firebrick');
     cssVariables.forEach((val, key) => {
-        if (key.includes(h1)){
+        if (key.map((el => el.toLocaleLowerCase())).includes(h1)){
             Object.entries(val).forEach((el) => {
                 // console.log(el[0], el[1]);
                 document.documentElement.style.setProperty(el[0], el[1]);
