@@ -10,6 +10,7 @@ let cssVariables =  new Map([
     [
         [
             'история эзотерики',
+            'зарождение эзотерических учений',
         ], 
         {
         '--bg-image-header' : 'url(../img/header_hist_esot.jpg)',
