@@ -61,7 +61,7 @@ header>h1 {
     min-height: 99vh;
     padding-top: 14vh;
     justify-content: flex-start;
-    row-gap: 3vh;
+    row-gap: 2vh;
     flex: 0;
     transition: min-height 0.3s ease-out;
 
@@ -89,13 +89,11 @@ header>h1 {
 
 .menu__footer {
     display: flex;
-    flex: 0 0 24px;
     align-items: end;
-    /* margin: 3vh 0; */
-    height: 24px;
     width: inherit;
     flex: 1;
     justify-content: space-around;
+    align-self: flex-end;
 
 }
 
@@ -299,7 +297,7 @@ footer {
 
 
 
-@media (max-width:1002px) or (max-height: 700px) {
+@media (max-width:1002px) or (max-height: 630px) {
 
     .dash {
         flex-direction: column;
