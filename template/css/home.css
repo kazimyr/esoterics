@@ -91,7 +91,7 @@ header>h1 {
     display: flex;
     flex: 0 0 24px;
     align-items: end;
-    margin: 3vh 0;
+    /* margin: 3vh 0; */
     height: 24px;
     width: inherit;
     flex: 1;
@@ -299,7 +299,7 @@ footer {
 
 
 
-@media (max-width:1002px) or (max-height: 795px) {
+@media (max-width:1002px) or (max-height: 700px) {
 
     .dash {
         flex-direction: column;
