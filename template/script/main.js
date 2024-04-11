@@ -99,10 +99,10 @@ let cssVariables =  new Map([
     ],
     [
         [
-            'Библиотека',
-            'Книги',
+            'Блог',
             'Статьи',
             'Видео',
+            'Обучение',
         ],
         {
             '--bg-image-header' : 'url(../img/bg-header-library.jpg)',
@@ -116,8 +116,8 @@ let cssVariables =  new Map([
         [
             'Библиотека',
             'Книги',
-            'Статьи',
-            'Видео',
+            'Публикации',
+            'Фильмы',
         ],
         {
             '--bg-image-header' : 'url(../img/bg-header-library.jpg)',

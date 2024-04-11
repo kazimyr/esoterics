@@ -283,6 +283,10 @@ a:visited {
     color: #f66400;
 }
 
+.card a {
+    color: #f66400;
+}
+
 .card a:visited {
     color: #f66400;
 }
