@@ -7,4 +7,4 @@ def home(request):
 
 def history(request):
     context = {'title' : 'История эзотерики'}
-    return render(request, 'articles/esoterics_history.html', context)
+    return render(request, 'articles/main.html', context)

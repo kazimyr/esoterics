@@ -1,9 +1,10 @@
+{% extends 'articles/base.html' %}
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'img/logo.svg' %}" type="image/x-icon">
@@ -11,54 +12,20 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <title>{{ title }}</title>
-</head>
+</head> -->
+{% block css %} {% static 'css/home.css' %} {% endblock %}
 
 <body class="body">
-    <header>
-        <a href="{% url  'home' %}" class="logo">
-            <img src="{% static 'img/logo.svg' %}" alt="Логотип">
-        </a>
-        <h1 class="header__name">{{ title }}</h1>
-    </header>
+    {% block header %}
+        {% block logo %}{{ block.super }} {% endblock %}
+        {% block h1 %}{{ block.super }} {% endblock %}
+    {% endblock %}
     <nav class="menu">
-        <a href="" class="menu__item-img">
-            <img src="{% static 'img/account.svg' %}" alt="Личный кабинет">
-        </a>
-        <a id="menu-1" class="menu__item" href="{% url  'history' %}">
-            История эзотерики
-        </a>
-        <a id="menu-2" class="menu__item" href="esoteric_teachings.html">
-            Эзотерические учения
-        </a>
-        <a id="menu-3" class="menu__item" href="slavs_secret_knowledge.html">
-            Тайные знания славян
-        </a>
-        <a id="menu-4" class="menu__item" href="practical_esoterics.html">
-            Практическая эзотерика
-        </a>
-        <a id="menu-5" class="menu__item" href="blog.html">
-            Блог
-        </a>
-        <a id="menu-6" class="menu__item" href="library.html">
-            Библиотека
-        </a>
-        <a id="course" class="menu__item-img" href="">
-
-            Маятник<br>
-            вам<br>
-            в руки
-        </a>
-        <section class="menu__footer">
-            <a class="menu__item-img" href="">
-                <img src="{% static 'img/vk.svg' %}" alt="ВК">
-            </a>
-            <a class="menu__item-img" href="">
-                <img src="{% static 'img/telegram.svg' %}" alt="Telegram">
-            </a>
-            <a class="menu__item-img" href="">
-                <img src="{% static 'img/mail.svg' %}" alt="">
-            </a>
-        </section>
+        {% block menu %}
+            {% block account %}{{ block.super }} {% endblock %}
+            {% block items %}{{ block.super }} {% endblock %}
+            {% block menu_footer %}{{ block.super }} {% endblock %}
+        {% endblock %}
     </nav>
     <img src="{% static 'img/up.svg' %}" alt="Кликни" class="up">
     <div class="submenu menu-1">

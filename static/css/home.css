@@ -259,7 +259,7 @@ blockquote {
 }
 
 /* Футер */
-footer {
+.footer {
     z-index: 1;
     display: flex;
     align-items: center;
@@ -389,7 +389,7 @@ footer {
         font-size: clamp(15.75px, 3.75vw, 24px);
     }
 
-    footer {
+    .footer {
         flex-direction: column;
         padding-top: 6px;
         font-size: 12px;
