@@ -1,4 +1,5 @@
 {
+    // pip install django black isort pylint pylint-django mypy django-stubs
     // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
     // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
     // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387

@@ -1,3 +1,4 @@
+// pip install django black isort pylint pylint-django mypy django-stubs
 {
     "editor.formatOnSave": true,
     "python.formatting.provider": "black",
