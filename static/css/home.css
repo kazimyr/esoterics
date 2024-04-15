@@ -211,6 +211,7 @@ header>h1 {
 }
 
 .find {
+    z-index: 1;
     display: flex;
     margin-top: 3.2vh;
     flex: 1 196px;

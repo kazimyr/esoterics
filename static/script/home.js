@@ -4,7 +4,7 @@ if (window.getComputedStyle(document.querySelector('.blockquote')).display === '
 } else {
     lastCourseIn = '.menu__footer';
 }
-document.querySelector('footer').onmouseover = function () {
+document.querySelector('.footer').onmouseover = function () {
     if (getComputedStyle(document.querySelector('.menu')).position === 'static') {
         document.querySelector('.menu').style.minHeight = '89.1vh';
     } else {
@@ -13,7 +13,7 @@ document.querySelector('footer').onmouseover = function () {
     }
 };
 
-document.querySelector('footer').onmouseout = function () {
+document.querySelector('.footer').onmouseout = function () {
     document.querySelector('.menu').style.minHeight = '99vh';
     if (getComputedStyle(document.querySelector('.menu')).position !== 'static') {
         document.querySelector('.dash').style.minHeight = '99vh';
