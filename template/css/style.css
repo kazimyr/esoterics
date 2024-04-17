@@ -221,7 +221,7 @@ a:visited {
     position: absolute;
     top: -1000px;
     display: flex;
-    min-width: content;
+    max-width: 250px;
     flex-direction: column;
     min-height: content;
     background-color: #0c0c0c;

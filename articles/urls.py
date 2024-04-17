@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import home, history
+from articles.views import *
 
 urlpatterns = [
     path('', home, name='home'),
-    path('history', history, name='history')
+    path('<menu>/', menu , name='menu'),
+    path('<menu>/<submenu>/', submenu , name='submenu'),
+    path('<menu>/<submenu>/<article>', article , name='article'),
 ]
