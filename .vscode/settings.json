@@ -11,21 +11,21 @@
     "emmet.includeLanguages": {"django-html": "html"},
 
     "editor.formatOnSave": true,
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs": [
-        "--line-length=120"
-    ],
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-    "python.linting.lintOnSave": true,
-    "python.linting.pylintArgs": [
-        "--load-plugins",
-        "pylint_django",
-        "--django-settings-module=sacral.settings",
-        "--max-line-length=120"
-    ],
+    // "python.formatting.provider": "black",
+    // "python.formatting.blackArgs": [
+    //     "--line-length=120"
+    // ],
+    // "python.linting.pylintEnabled": true,
+    // "python.linting.enabled": true,
+    // "python.linting.lintOnSave": true,
+    // "python.linting.pylintArgs": [
+    //     "--load-plugins",
+    //     "pylint_django",
+    //     "--django-settings-module=sacral.settings",
+    //     "--max-line-length=120"
+    // ],
     "editor.codeActionsOnSave": {
         "source.organizeImports": "explicit"
     },
-    "python.linting.mypyEnabled": true
+    // "python.linting.mypyEnabled": true
 }

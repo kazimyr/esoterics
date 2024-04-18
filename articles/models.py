@@ -1,9 +1,18 @@
 from django.db import models
+from django.urls import reverse
 
 class Menu(models.Model):
     name = models.CharField(max_length=128, unique=True)
     slug = models.CharField(max_length=16, unique=True)
 
+    def get_absolute_url(self):
+        return reverse(
+                        'menu',
+                        kwargs=
+                                {
+                                    'menu': self.slug
+                                }
+                            )
  
     # class Meta:
     #     verbose_name = ("")
@@ -12,8 +21,6 @@ class Menu(models.Model):
     def __str__(self):
         return self.name
 
-    # def get_absolute_url(self):
-    #     return reverse("_detail", kwargs={"pk": self.pk})
 
 
 class Submenu(models.Model):
@@ -22,6 +29,16 @@ class Submenu(models.Model):
     description = models.TextField()
     menu_id = models.ForeignKey(to=Menu, on_delete=models.PROTECT)
 
+    def get_absolute_url(self):
+        return reverse(
+                        'submenu',
+                        kwargs=
+                                {
+                                    'menu': self.menu_id.slug,
+                                    'submenu': self.slug
+                                }
+                        )
+
 
     def __str__(self):
         return self.name
@@ -29,8 +46,8 @@ class Submenu(models.Model):
 
 
 class Articles(models.Model):
-    def img_path(instance, filename):
-        return f'img/articles/{instance.name}/{filename}'
+    def img_path(self, filename):
+        return f'img/articles/{self.slug}/{filename}'
 
 
     name = models.CharField(max_length=128,unique=True)
@@ -43,6 +60,18 @@ class Articles(models.Model):
     submenu_id = models.ForeignKey(to=Submenu, on_delete=models.PROTECT)
 
 
+    def get_absolute_url(self):
+        return reverse(
+                        'article',
+                        kwargs=
+                                {
+                                    'menu': self.submenu_id.menu_id.slug,
+                                    'submenu': self.submenu_id.slug,
+                                    'article': self.slug
+                                }
+                        )
+
+
     def __str__(self):
         return self.name
     
@@ -51,8 +80,6 @@ class Articles(models.Model):
     #     verbose_name = ("")
     #     verbose_name_plural = ("s")
 
-    # def get_absolute_url(self):
-    #     return reverse("_detail", kwargs={"pk": self.pk})
 
 
 class Section(models.Model):

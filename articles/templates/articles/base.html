@@ -48,7 +48,7 @@
             <section class="items">
                 {% block items %}
                     {% for item in menu_items %}
-                        <a id="menu-{{item.pk}}" class="menu__item" href="{% url 'menu' item.slug %}">
+                        <a id="menu-{{item.pk}}" class="menu__item" href="{{ item.get_absolute_url }}"> 
                             {{item.name}}
                         </a>
                     {% endfor %}
@@ -76,7 +76,7 @@
                 {% for item in menu_items %}
                     <div class="submenu menu-{{item.pk}}">
                     {% for sitem in item.submenu_set.all %}
-                        <a href="{% url 'submenu' item.slug sitem.slug %}" class="menu__item">
+                        <a href="{{ sitem.get_absolute_url }}" class="menu__item">
                             {{sitem.name}}
                         </a>
                     {% endfor %}
