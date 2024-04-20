@@ -46,14 +46,14 @@
     }
 }
 
-:root {
+/* :root {
     --bg-image-header: ''; 
     --bg-image-main : ''; 
     --bg-image-footer : ''; 
     --base-color: ''; 
     --card-bg-color: ''; 
 
-  }
+  } */
 
 body {
     display: grid;

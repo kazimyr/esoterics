@@ -2,6 +2,19 @@
 
 {% load static %}
 
+
+{% block style %}
+    <style>
+        :root {
+            --bg-image-header: {{colors.bg_header}}; 
+            --bg-image-main : {{colors.bg_main}}; 
+            --bg-image-footer : {{colors.bg_footer}}; 
+            --base-color: {{colors.base_color}}; 
+            --card-bg-color: {{colors.bg_color}}; 
+          }
+    </style>
+{% endblock style %}
+
 {% block main %}
     
     {% for topic in topics  %}
