@@ -15,11 +15,12 @@ class Menu(models.Model):
                         'menu',
                         kwargs=
                                 {
-                                    'menu': self.slug
+                                    'menu_slug': self.slug
                                 }
                             )
  
-    # class Meta:
+    class Meta:
+        ordering = ('pk',)
     #     verbose_name = ("")
     #     verbose_name_plural = ("")
 
@@ -38,10 +39,16 @@ class Submenu(models.Model):
                         'submenu',
                         kwargs=
                                 {
-                                    'menu': self.menu_id.slug,
-                                    'submenu': self.slug
+                                    'menu_slug': self.menu_id.slug,
+                                    'submenu_slug': self.slug
                                 }
                         )
+
+
+    class Meta:
+        ordering = ('pk',)
+    #     verbose_name = ("")
+    #     verbose_name_plural = ("")
 
 
     def __str__(self):
@@ -55,9 +62,9 @@ class Articles(models.Model):
                         'article',
                         kwargs=
                                 {
-                                    'menu': self.submenu_id.menu_id.slug,
-                                    'submenu': self.submenu_id.slug,
-                                    'article': self.slug
+                                    'menu_slug': self.submenu_id.menu_id.slug,
+                                    'submenu_slug': self.submenu_id.slug,
+                                    'article_slug': self.slug
                                 }
                         )
 
@@ -82,9 +89,10 @@ class Articles(models.Model):
         return f'{self.submenu_id.get_absolute_url()}{self.name}'
     
 
-    # class Meta:
+    class Meta:
+        ordering = ('pk',)
     #     verbose_name = ("")
-    #     verbose_name_plural = ("s")
+    #     verbose_name_plural = ("")
 
 
 
@@ -100,6 +108,12 @@ class Section(models.Model):
     def __str__(self):
         return f'{self.articles_id.get_absolute_url()}{self.header}'
 
+    
+    class Meta:
+        ordering = ('pk',)
+    #     verbose_name = ("")
+    #     verbose_name_plural = ("")
+
 
 class Paragraph(models.Model):
     content = models.TextField()
@@ -107,3 +121,8 @@ class Paragraph(models.Model):
 
     def __str__(self):
         return f'{self.section_id.header}-{self.pk}'
+    
+    class Meta:
+        ordering = ('pk',)
+    #     verbose_name = ("")
+    #     verbose_name_plural = ("")

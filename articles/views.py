@@ -44,3 +44,4 @@ def article(request, menu_slug, submenu_slug, article_slug):
                 'colors' : colors(article_item.get_absolute_url())
               }
     return render(request, 'articles/main.html', context)
+    

@@ -401,13 +401,13 @@ a:visited {
         font-size: 2.4vh;
             }
 
-    .card h2 {
+    /* .card h2 {
         font-size: 2.3vh;
     }
 
     .card {
         font-size: 2.3vh;
-    }
+    } */
 }
 
 @media (max-width:307px) {

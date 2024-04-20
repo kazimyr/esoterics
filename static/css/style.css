@@ -46,14 +46,14 @@
     }
 }
 
-/* :root {
+:root {
     --bg-image-header: ''; 
     --bg-image-main : ''; 
     --bg-image-footer : ''; 
     --base-color: ''; 
     --card-bg-color: ''; 
 
-  } */
+  }
 
 body {
     display: grid;
@@ -226,7 +226,6 @@ a:visited {
     min-height: content;
     background-color: #0c0c0c;
     font-size: 16px;
-    text-align: left;
     padding: 6px;
     transition: top .5s ease-out;
 }
@@ -402,13 +401,13 @@ a:visited {
         font-size: 2.4vh;
             }
 
-    .card h2 {
+    /* .card h2 {
         font-size: 2.3vh;
     }
 
     .card {
         font-size: 2.3vh;
-    }
+    } */
 }
 
 @media (max-width:307px) {
