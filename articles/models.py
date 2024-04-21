@@ -18,7 +18,7 @@ class Menu(models.Model):
                                     'menu_slug': self.slug
                                 }
                             )
- 
+
     class Meta:
         ordering = ('pk',)
     #     verbose_name = ("")
@@ -68,10 +68,8 @@ class Articles(models.Model):
                                 }
                         )
 
-
-
     def img_path(self, filename):
-        return f'img/{self.get_absolute_url()}/{filename}'
+        return f'img/{self.get_absolute_url()}/{self.pk}.' + filename.split('.')[1]
 
 
     name = models.CharField(max_length=128,unique=True)
@@ -84,10 +82,8 @@ class Articles(models.Model):
     publish_date = models.DateField(auto_now_add=True)
     submenu_id = models.ForeignKey(to=Submenu, on_delete=models.PROTECT)
 
-
     def __str__(self):
         return f'{self.submenu_id.get_absolute_url()}{self.name}'
-    
 
     class Meta:
         ordering = ('pk',)
@@ -98,8 +94,7 @@ class Articles(models.Model):
 
 class Section(models.Model):
     def img_path(self, filename):
-        return f'img/{self.articles_id.get_absolute_url()}/{filename}'
-
+        return f'img/{self.articles_id.get_absolute_url()}/{self.articles_id.pk}-{self.pk}' + filename.split('.')[1]
 
     header = models.CharField(max_length=128,unique=True)
     articles_id = models.ForeignKey(Articles, on_delete=models.PROTECT)
@@ -108,7 +103,6 @@ class Section(models.Model):
     def __str__(self):
         return f'{self.articles_id.get_absolute_url()}{self.header}'
 
-    
     class Meta:
         ordering = ('pk',)
     #     verbose_name = ("")
@@ -121,7 +115,7 @@ class Paragraph(models.Model):
 
     def __str__(self):
         return f'{self.section_id.header}-{self.pk}'
-    
+
     class Meta:
         ordering = ('pk',)
     #     verbose_name = ("")
