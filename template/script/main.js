@@ -105,11 +105,11 @@ let cssVariables =  new Map([
             'Обучение',
         ],
         {
-            '--bg-image-header' : 'url(../img/bg-header-library.jpg)',
-            '--bg-image-main' : 'url(../img/bg-main-library.jpg)',
-            '--bg-image-footer' : 'url(../img/bg-footer-library.jpg)',
-            '--base-color' : '#1f3f267d',
-            '--card-bg-color' : '#1f3f267d'
+            '--bg-image-header' : 'url(../img/bg-header-blog.jpg)',
+            '--bg-image-main' : 'url(../img/bg-main-blog.jpg)',
+            '--bg-image-footer' : 'url(../img/bg-footer-blog.jpg)',
+            '--base-color' : '#486a85ab',
+            '--card-bg-color' : '#486a85ab'
         }
     ],
     [
