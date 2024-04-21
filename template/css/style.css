@@ -240,20 +240,23 @@ a:visited {
 }
 
 /* Основной раздел */
-.main {
+main {
     grid-area: main;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 233px);
-    grid-auto-rows: minmax(24em, 350px);
-    column-gap: 1.5%;
-    row-gap: 2.9%;
     padding: 0 1%;
-    justify-content:space-around ;
     background-image: var(--bg-image-main);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     overflow-y: auto;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 233px);
+    grid-auto-rows: minmax(24em, 350px);
+    column-gap: 1.5%;
+    row-gap: 2.9%;
+    justify-content:space-around;
 }
 
 .card {
@@ -291,7 +294,36 @@ a:visited {
     color: #f66400;
 }
 
+.articles {
+    display: grid;
+    /* grid-template-columns: 1fr; */
+    padding: 0 6% 0 1%;
+}
 
+article {
+    display: grid;
+    /* row-gap: 20px; */
+    justify-items: center;
+    font-size: 16px;
+    background-color: var(--card-bg-color);
+    padding: 1% 6%;
+    overflow-y: auto;
+}
+
+article h2 {
+    font-size: 30px;
+    margin-top: 60px;
+}
+
+article img {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+article p {
+    text-indent: 1.5em;
+    margin: 4px 0;
+}
 
 /* Подвал */
 .footer {
