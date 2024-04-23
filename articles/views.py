@@ -39,7 +39,7 @@ def article(request, menu_slug, submenu_slug, article_slug):
     article_item = Menu.objects.get(slug=menu_slug).submenu_set.get(slug=submenu_slug).articles_set.get(slug=article_slug)
     context = {
                 'title' : article_item.name,
-                # 'topics' : article_item.section_set.all(),
+                'topics' : article_item.section_set.filter(section_id=None),
                 'article' : article_item,
                 'colors' : colors(article_item.get_absolute_url())
               }
