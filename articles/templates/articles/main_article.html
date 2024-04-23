@@ -1,0 +1,79 @@
+{% extends 'articles/base.html' %}
+
+{% load static %}
+
+
+{% block style %}
+    <style>
+        :root {
+            --bg-image-header: {{colors.bg_header}}; 
+            --bg-image-main : {{colors.bg_main}}; 
+            --bg-image-footer : {{colors.bg_footer}}; 
+            --base-color: {{colors.base_color}}; 
+            --card-bg-color: {{colors.bg_color}}; 
+          }
+    </style>
+{% endblock style %}
+
+{% block main %}
+    <main class="articles">
+        <article>
+            <section>
+                
+                {% if article.image.url != "" %}
+                    <img class="head" src="{{article.image.url}}" alt="">
+                {% endif %}
+                    
+                {{article.intro|linebreaks}}
+            </section>
+             
+            {% with sections=article.section_set.all  %}
+                <ul>
+                    <h2>Содержание</h2>
+                    {% for sect_item in sections %}
+                        
+                        {% if sect_item.section_id is None %}
+                            <li><a href="#{{sect_item.id}}">{{sect_item.header}}</a></li>
+                            <ul>
+                                {% for sub in sect_item.myself.all %}
+                                    <li><a href="#{{sub.id}}">{{sub.header}}</a></li>
+                                {% endfor %}
+                            </ul>    
+                        {% endif %}
+                            
+                    {% endfor %}
+                </ul>
+                <section>
+                    {% for sect_item in sections %}
+                    
+                        {% if sect_item.section_id is None %}
+                            <h2 id="{{sect_item.pk}}">{{sect_item.header}}</h2>
+                            
+                            {% if sect_item.image.url != "" %}
+                                <img class="first" src="{{sect_item.image.url}}" alt="">
+                            {% endif %}
+                            {{sect_item.top_text|linebreaks}}
+                            
+                            {% for sub in sect_item.myself.all %}
+                                <h3 id="{{sub.pk}}">{{sub.header}}</h3>
+                                <section class="sub">
+                                    {% if sub.image.url != "" %}
+                                        <img class="second" src="{{sub.image.url}}" alt="">
+                                    {% endif %}
+                                    {{sub.top_text|linebreaks}}
+                                </section>
+                            {% endfor %}
+                            {{sect_item.bottom_text|linebreaks}}   
+                            
+                        {% endif %}
+                            
+                    {% endfor %}
+                </section>
+                <footer>
+                    <time>{{article.publish_date}}</time>
+                    <cite>{{article.author}}</cite>
+                </footer>
+            {% endwith %}    
+        </article>
+    </main>    
+{% endblock main %}

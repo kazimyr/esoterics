@@ -77,7 +77,7 @@ class Articles(models.Model):
     image = models.ImageField(upload_to=img_path, blank=True)
     description = models.TextField()
     intro = models.TextField(blank=True)
-    author = models.CharField( max_length=50, default='Кубекина Е.В.')
+    author = models.CharField( max_length=50, default='Елена Кубекина')
     create_date = models.DateField(auto_now=True)
     publish_date = models.DateField(auto_now_add=True)
     submenu_id = models.ForeignKey(to=Submenu, on_delete=models.PROTECT)
@@ -94,14 +94,18 @@ class Articles(models.Model):
 
 class Section(models.Model):
     def img_path(self, filename):
-        return f'img/{self.articles_id.get_absolute_url()}/{self.articles_id.pk}-{self.pk}' + filename.split('.')[1]
+        return f'img/{self.articles_id.get_absolute_url()}/{self.articles_id.pk}-{self.section_id.pk if self.section_id else ""}-{self.pk}.' + filename.split('.')[1]
 
     header = models.CharField(max_length=128,unique=True)
     articles_id = models.ForeignKey(Articles, on_delete=models.PROTECT)
     image = models.ImageField(upload_to=img_path, blank=True)
+    top_text = models.TextField(null=True)
+    bottom_text = models.TextField(null=True, blank=True)
+    section_id = models.ForeignKey('self', on_delete=models.PROTECT, related_name='myself', null=True, blank=True)
+
 
     def __str__(self):
-        return f'{self.articles_id.get_absolute_url()}{self.header}'
+        return f'{self.articles_id.get_absolute_url()}/{self.header}'
 
     class Meta:
         ordering = ('pk',)
@@ -109,14 +113,14 @@ class Section(models.Model):
     #     verbose_name_plural = ("")
 
 
-class Paragraph(models.Model):
-    content = models.TextField()
-    section_id = models.ForeignKey(Section, on_delete=models.PROTECT)
+# class Paragraph(models.Model):
+#     content = models.TextField()
+#     section_id = models.ForeignKey(Section, on_delete=models.PROTECT)
 
-    def __str__(self):
-        return f'{self.section_id.header}-{self.pk}'
+#     def __str__(self):
+#         return f'{self.section_id.header}-{self.pk}'
 
-    class Meta:
-        ordering = ('pk',)
+#     class Meta:
+#         ordering = ('pk',)
     #     verbose_name = ("")
     #     verbose_name_plural = ("")

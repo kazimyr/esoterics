@@ -15,25 +15,27 @@
     {% endblock menu%}
     {% block up %}{{ block.super }}{% endblock up %}
     {% block main %}
-        <section class="title">
-            <h2 class="name">{{ title | upper }}</h1>
-                <h2 class="comment">теория и практика</h2>
-        </section>
-        <section class="aside">
-            <form class="find" action="" method="get">
-                <input type="search" class="find__input" name="find" placeholder="Что ищем?">
-                <button type="submit" class="find__button">
-                    <img src="{% static 'img/find.svg' %}" alt="Поиск">
-                </button>
-            </form>
-            <div class="blockquote">
-                <blockquote>
-                    "Знание эзотерики подобно волшебному ключу,
-                    открывающему дверь к глубоким и таинственным аспектам жизни."
-                </blockquote>
-                <p>Артур Конан Дойл</p>
-            </div>
-        </section>
+        <main class="dash">
+            <section class="title">
+                <h2 class="name">{{ title | upper }}</h1>
+                    <h2 class="comment">теория и практика</h2>
+            </section>
+            <section class="aside">
+                <form class="find" action="" method="get">
+                    <input type="search" class="find__input" name="find" placeholder="Что ищем?">
+                    <button type="submit" class="find__button">
+                        <img src="{% static 'img/find.svg' %}" alt="Поиск">
+                    </button>
+                </form>
+                <div class="blockquote">
+                    <blockquote>
+                        "Знание эзотерики подобно волшебному ключу,
+                        открывающему дверь к глубоким и таинственным аспектам жизни."
+                    </blockquote>
+                    <p>Артур Конан Дойл</p>
+                </div>
+            </section>
+        </main>
     {% endblock main%}
     {% block footer %}
         <footer class="footer">

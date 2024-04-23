@@ -16,19 +16,19 @@
 {% endblock style %}
 
 {% block main %}
-    
-    {% for topic in topics  %}
-        <artticle class="card">
-            <header>
-                <h2>{{topic.name}}</h2>
-            </header>
-            <p> 
-                {{topic.description}}
-            </p>
-            <footer>
-                <a href="{{topic.get_absolute_url}}">ЧИТАТЬ</a>
-            </footer>
-        </artticle>
-    {% endfor %}
-        
+    <main class="main">
+        {% for topic in topics  %}
+            <article class="card">
+                <header>
+                    <h2>{{topic.name}}</h2>
+                </header>
+                <p> 
+                    {{topic.description}}
+                </p>
+                <footer>
+                    <a href="{{topic.get_absolute_url}}">ЧИТАТЬ</a>
+                </footer>
+            </article>
+        {% endfor %}
+    </main>    
 {% endblock main %}

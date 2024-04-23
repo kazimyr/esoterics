@@ -296,33 +296,74 @@ main {
 
 .articles {
     display: grid;
-    /* grid-template-columns: 1fr; */
-    padding: 0 6% 0 1%;
+    padding: 0 6%;
 }
 
 article {
     display: grid;
-    /* row-gap: 20px; */
     justify-items: center;
     font-size: 16px;
+    font-weight: 600;
     background-color: var(--card-bg-color);
     padding: 1% 6%;
     overflow-y: auto;
 }
 
+article section {
+    display: grid;
+    justify-items: center;
+    margin-bottom: 1%;
+}
+
 article h2 {
-    font-size: 30px;
+    font-size: clamp(15px, 3.3vh, 3.4vh);
     margin-top: 60px;
 }
 
 article img {
-    width: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 1%;
 }
 
 article p {
     text-indent: 1.5em;
+    justify-self: start;
     margin: 4px 0;
+}
+
+article>ul {
+    border: 4px double #aaafb3;
+    padding: 40px;
+}
+
+article>ul>h2 {
+    margin-top: 0;
+}
+
+.sub {
+    justify-self: start;
+    display: flex;
+    align-items: center;
+    column-gap: 6%;
+}
+
+.head {
+    width: 50%;
+}
+
+.first {
+    width: 45%;
+}
+
+.second {
+    width: 15%;
+}
+
+article>footer {
+    justify-self: start;
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 /* Подвал */
@@ -435,13 +476,13 @@ article p {
         font-size: 2.4vh;
             }
 
-    /* .card h2 {
+    article h2 {
         font-size: 2.3vh;
     }
 
-    .card {
-        font-size: 2.3vh;
-    } */
+    article {
+        font-size: 1.8vh;
+    }
 }
 
 @media (max-width:307px) {

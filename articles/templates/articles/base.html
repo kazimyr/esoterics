@@ -89,11 +89,11 @@
     {% block up %}
         <img src="{% static 'img/up.svg' %}" alt="Кликни" class="up">
     {% endblock up%}
-    <main class="main dash">
-        {% block main %}
+    {% block main %}
+    {% comment %} <main class="main dash">
             
-        {% endblock main%}
-    </main>
+    </main> {% endcomment %}
+    {% endblock main%}
     {% block footer %}
         <footer class="footer">
             <section class="footer_inner">
