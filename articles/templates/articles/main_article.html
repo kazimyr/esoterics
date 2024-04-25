@@ -21,7 +21,7 @@
             <section>
                 
                 {% if article.image.url != "" %}
-                    <img class="head" src="{{article.image.url}}" alt="">
+                    <img class="head" src="{{article.image.url}}" alt="{{article.get_img_file_name}}">
                 {% endif %}
                     
                 {{article.intro|linebreaks}}
@@ -44,7 +44,7 @@
                         <h2 id="{{sect_item.pk}}">{{sect_item.header}}</h2>
                         
                         {% if sect_item.image.url != "" %}
-                            <img class="first" src="{{sect_item.image.url}}" alt="">
+                            <img class="first" src="{{sect_item.image.url}}" alt="{{sect_item.get_img_file_name}}">
                         {% endif %}
                         {{sect_item.top_text|linebreaks}}
                         
@@ -52,7 +52,7 @@
                             <h3 id="{{sub.pk}}">{{sub.header}}</h3>
                             <section class="sub">
                                 {% if sub.image.url != "" %}
-                                    <img class="second" src="{{sub.image.url}}" alt="">
+                                    <img class="second" src="{{sub.image.url}}" alt="{{sub.get_img_file_name}}">
                                 {% endif %}
                                 {{sub.top_text|linebreaks}}
                             </section>

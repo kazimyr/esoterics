@@ -21,8 +21,8 @@ class Menu(models.Model):
 
     class Meta:
         ordering = ('pk',)
-    #     verbose_name = ("")
-    #     verbose_name_plural = ("")
+        verbose_name = "Пункт меню"
+        verbose_name_plural = "Пункты меню"
 
     def __str__(self):
         return str(self.name)
@@ -47,12 +47,12 @@ class Submenu(models.Model):
 
     class Meta:
         ordering = ('pk',)
-    #     verbose_name = ("")
-    #     verbose_name_plural = ("")
+        verbose_name = "Пункт подменю"
+        verbose_name_plural = "Пункты подменю"
 
 
     def __str__(self):
-        return f'{self.menu_id.get_absolute_url()}{self.name}'
+        return f'{self.menu_id} / {self.name}'
 
 
 
@@ -69,48 +69,56 @@ class Articles(models.Model):
                         )
 
     def img_path(self, filename):
-        return f'img/{self.get_absolute_url()}/{self.pk}.' + filename.split('.')[1]
+        return f'img/{self.get_absolute_url()}/{filename}'
 
 
-    name = models.CharField(max_length=128,unique=True)
-    slug = models.CharField(max_length=16, null=True, blank=True)
-    image = models.ImageField(upload_to=img_path, blank=True)
-    description = models.TextField()
-    intro = models.TextField(blank=True)
-    author = models.CharField( max_length=50, default='Елена Кубекина')
-    create_date = models.DateField(auto_now=True)
-    publish_date = models.DateField(auto_now_add=True)
-    submenu_id = models.ForeignKey(to=Submenu, on_delete=models.PROTECT)
+    name = models.CharField(max_length=128, unique=True, verbose_name='Название')
+    slug = models.CharField(max_length=16, null=True, blank=True, verbose_name='Слаг')
+    image = models.ImageField(upload_to=img_path, blank=True , verbose_name='Картинка')
+    description = models.TextField(verbose_name='Анонс')
+    intro = models.TextField(blank=True, verbose_name='Вступление')
+    author = models.CharField( max_length=50, default='Елена Кубекина', verbose_name='Автор')
+    create_date = models.DateField(auto_now=True, verbose_name='Создана')
+    publish_date = models.DateField(auto_now_add=True, verbose_name='Опубликована')
+    submenu_id = models.ForeignKey(to=Submenu, on_delete=models.PROTECT, verbose_name='Раздел подменю')
 
     def __str__(self):
-        return f'{self.submenu_id.get_absolute_url()}{self.name}'
+        return f'{self.submenu_id.get_absolute_url()} {self.name}'
+
+    def get_img_file_name(self):
+        return self.image.name.split('/')[-1].split('.')[0]
 
     class Meta:
         ordering = ('pk',)
-    #     verbose_name = ("")
-    #     verbose_name_plural = ("")
+        verbose_name = "Статья"
+        verbose_name_plural = "Статьи"
 
 
 
 class Section(models.Model):
     def img_path(self, filename):
-        return f'img/{self.articles_id.get_absolute_url()}/{self.articles_id.pk}-{self.section_id.pk if self.section_id else ""}-{self.pk}.' + filename.split('.')[1]
+        return f'img/{self.articles_id.get_absolute_url()}/{filename}'
 
-    header = models.CharField(max_length=128,unique=True)
-    articles_id = models.ForeignKey(Articles, on_delete=models.PROTECT)
-    image = models.ImageField(upload_to=img_path, blank=True)
+    header = models.CharField(max_length=128,unique=True, verbose_name='Название')
+    articles_id = models.ForeignKey(Articles, on_delete=models.PROTECT, verbose_name='Статья')
+    image = models.ImageField(upload_to=img_path, blank=True, verbose_name='Картинка')
     top_text = models.TextField(null=True)
     bottom_text = models.TextField(null=True, blank=True)
-    section_id = models.ForeignKey('self', on_delete=models.PROTECT, related_name='myself', null=True, blank=True)
+    section_id = models.ForeignKey(
+        'self', on_delete=models.PROTECT, related_name='myself', null=True, blank=True, verbose_name='Раздел'
+        )
 
 
     def __str__(self):
-        return f'{self.articles_id.get_absolute_url()}/{self.header}'
+        return f'{self.section_id.header+" | " if self.section_id else ""}{self.header}'
+    
+    def get_img_file_name(self):
+        return self.image.name.split('/')[-1].split('.')[0]
 
     class Meta:
         ordering = ('pk',)
-    #     verbose_name = ("")
-    #     verbose_name_plural = ("")
+        verbose_name = "Раздел"
+        verbose_name_plural = "Разделы"
 
 
 # class Paragraph(models.Model):

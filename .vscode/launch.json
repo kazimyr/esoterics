@@ -12,7 +12,7 @@
             "program": "${workspaceFolder}/manage.py",
             "args": [
                 "runserver",
-                "8080"
+                "192.168.8.6:8080"
             ],
             "django": true
         }
